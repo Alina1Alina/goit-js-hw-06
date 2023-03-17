@@ -1,15 +1,20 @@
 const form = document.querySelector('.login-form')
-const emailEl = document.querySelector('[name="email"]');
-const passEl = document.querySelector('[name="password"]');
+// const emailEl = document.querySelector('[name="email"]');
+// const passEl = document.querySelector('[name="password"]');
 
 form.addEventListener('submit', (ev) => {
-    ev.preventDefault();
-    if (emailEl.value === "" || passEl.value === "") {
+  ev.preventDefault();
+
+  const email = ev.target.elements.email
+  const password = ev.target.elements.password
+ 
+  
+    if (email.value === "" || password.value === "") {
         return alert('all fields are required')
     } 
     console.log({
-        [emailEl.name]: emailEl.value,
-        [passEl.name]: passEl.value,
+        email: email.value,
+        password: password.value,
     })
     ev.target.reset();
 })
