@@ -8,8 +8,8 @@ form.addEventListener('submit', (ev) => {
         return alert('all fields are required')
     } 
     console.log({
-        email: emailEl.value,
-        password: passEl.value,
+        [emailEl.name]: emailEl.value,
+        [passEl.name]: passEl.value,
     })
     ev.target.reset();
 })
